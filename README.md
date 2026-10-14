@@ -25,7 +25,7 @@ appeared in Apple Health and in the widget within a minute of that sync.
 1. Open `AirSteps.xcodeproj` in Xcode 15 or newer.
 2. Select the **AirSteps** target → *Signing & Capabilities* → pick your team.
    Do the same for **AirStepsWidgetExtension**. Both targets already declare
-   HealthKit and the App Group `group.com.axitetech.airsteps`. If Xcode asks to
+   HealthKit and the App Group `group.nl.studiocobalt.airsteps`. If Xcode asks to
    register the App Group with your team, say yes. If you change the bundle id,
    change the App Group id in both `.entitlements` files and in
    `Shared/SnapshotStore.swift`.

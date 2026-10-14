@@ -83,8 +83,8 @@ Caption ideas: "Your Fitbit Air steps, with a friend" · "Sparkles when you hit 
 
 ## Pre-submission checklist
 - [ ] Apple Developer Program membership active
-- [ ] Bundle id `com.axitetech.AirSteps` registered (Xcode does this with automatic signing)
-- [ ] App Group `group.com.axitetech.airsteps` registered to your team
+- [ ] Bundle id `nl.studiocobalt.AirSteps` registered (Xcode does this with automatic signing)
+- [ ] App Group `group.nl.studiocobalt.airsteps` registered to your team
 - [ ] Privacy policy URL live
 - [x] Contact email set in `docs/privacy.html` and `docs/index.html`
 - [ ] Check "AirSteps" is still an available app name in App Store Connect

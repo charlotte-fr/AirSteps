@@ -2,7 +2,7 @@ import Foundation
 
 enum AppGroup {
     /// Must match the App Group in both entitlements files.
-    static let id = "group.com.axitetech.airsteps"
+    static let id = "group.nl.studiocobalt.airsteps"
 }
 
 /// Tiny key-value store shared between the app and the widget.
