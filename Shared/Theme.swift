@@ -14,6 +14,7 @@ enum Theme {
     static let track    = Color(hex: 0xF3E6D9)
 
     static let birdBody = Color(hex: 0xFFC98C)
+    static let birdBodyLight = Color(hex: 0xFFDBAE)
     static let birdWing = Color(hex: 0xF4B16A)
     static let birdBelly = Color(hex: 0xFFF2DA)
     static let beak     = Color(hex: 0xFF9A5C)

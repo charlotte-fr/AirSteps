@@ -1,5 +1,6 @@
 # XcodeGen spec. The checked-in AirSteps.xcodeproj is generated from this;
-# run `xcodegen` to regenerate it after adding files.
+# run `xcodegen` to regenerate it after adding files. Info.plist and
+# entitlements files are hand-written and referenced, never generated.
 name: AirSteps
 options:
   bundleIdPrefix: nl.studiocobalt
@@ -17,14 +18,13 @@ targets:
     type: application
     platform: iOS
     sources: [AirSteps, Shared]
-    info:
-      path: AirSteps/Info.plist
-    entitlements:
-      path: AirSteps/AirSteps.entitlements
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: nl.studiocobalt.AirSteps
         GENERATE_INFOPLIST_FILE: NO
+        INFOPLIST_FILE: AirSteps/Info.plist
+        CODE_SIGN_ENTITLEMENTS: AirSteps/AirSteps.entitlements
+        TARGETED_DEVICE_FAMILY: "1"
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
     dependencies:
@@ -34,12 +34,20 @@ targets:
     type: app-extension
     platform: iOS
     sources: [AirStepsWidget, Shared]
-    info:
-      path: AirStepsWidget/Info.plist
-    entitlements:
-      path: AirStepsWidget/AirStepsWidget.entitlements
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: nl.studiocobalt.AirSteps.widget
         GENERATE_INFOPLIST_FILE: NO
+        INFOPLIST_FILE: AirStepsWidget/Info.plist
+        CODE_SIGN_ENTITLEMENTS: AirStepsWidget/AirStepsWidget.entitlements
+        TARGETED_DEVICE_FAMILY: "1"
         SKIP_INSTALL: YES
+schemes:
+  AirSteps:
+    build:
+      targets:
+        AirSteps: all
+    run:
+      config: Debug
+    archive:
+      config: Release

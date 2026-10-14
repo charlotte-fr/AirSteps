@@ -36,9 +36,12 @@ final class AppModel: ObservableObject {
     }
 
     func setGoal(_ newGoal: Int) {
+        guard newGoal != goal else { return }
         goal = newGoal
         SnapshotStore.shared.goal = newGoal
-        Task { await refresh() }
+        snapshot.goal = newGoal
+        SnapshotStore.shared.save(snapshot)
+        WidgetCenter.shared.reloadAllTimelines()
     }
 
     func select(source: HKSource) {

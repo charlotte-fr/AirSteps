@@ -68,21 +68,65 @@ struct ContentView: View {
 
     private var goalPicker: some View {
         card("daily goal") {
-            HStack(spacing: 8) {
-                ForEach(goals, id: \.self) { g in
-                    Button {
-                        model.setGoal(g)
-                    } label: {
-                        Text(g.short)
-                            .font(.cute(14, .heavy))
-                            .padding(.horizontal, 12)
-                            .padding(.vertical, 8)
-                            .background(model.goal == g ? Theme.progressStart : .white.opacity(0.6),
-                                        in: Capsule())
-                            .foregroundStyle(model.goal == g ? .white : Theme.ink)
+            VStack(spacing: 12) {
+                HStack(alignment: .firstTextBaseline, spacing: 6) {
+                    Text(model.goal.grouped)
+                        .font(.cute(34, .heavy))
+                        .foregroundStyle(Theme.ink)
+                        .contentTransition(.numericText())
+                    Text("steps")
+                        .font(.cute(14, .bold))
+                        .foregroundStyle(Theme.muted)
+                }
+
+                HStack(spacing: 10) {
+                    roundButton("minus") { model.setGoal(max(Self.minGoal, model.goal - Self.goalStep)) }
+                    Slider(value: goalBinding, in: Double(Self.minGoal)...Double(Self.maxGoal), step: Double(Self.goalStep))
+                        .tint(Theme.progressStart)
+                    roundButton("plus") { model.setGoal(min(Self.maxGoal, model.goal + Self.goalStep)) }
+                }
+
+                HStack(spacing: 8) {
+                    ForEach(goals, id: \.self) { g in
+                        Button {
+                            model.setGoal(g)
+                        } label: {
+                            Text(g.short)
+                                .font(.cute(13, .heavy))
+                                .padding(.horizontal, 11)
+                                .padding(.vertical, 7)
+                                .background(model.goal == g ? Theme.progressStart : .white.opacity(0.6),
+                                            in: Capsule())
+                                .foregroundStyle(model.goal == g ? .white : Theme.ink)
+                        }
                     }
                 }
+
+                Text("Anything from \(Self.minGoal.grouped) to \(Self.maxGoal.grouped) steps a day.")
+                    .font(.cute(11, .semibold))
+                    .foregroundStyle(Theme.muted)
             }
+            .frame(maxWidth: .infinity)
+            .animation(.snappy, value: model.goal)
+        }
+    }
+
+    private static let minGoal = 100
+    private static let maxGoal = 50_000
+    private static let goalStep = 100
+
+    private var goalBinding: Binding<Double> {
+        Binding(get: { Double(model.goal) },
+                set: { model.setGoal(Int($0.rounded())) })
+    }
+
+    private func roundButton(_ symbol: String, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            Image(systemName: symbol)
+                .font(.system(size: 13, weight: .heavy))
+                .foregroundStyle(Theme.ink)
+                .frame(width: 32, height: 32)
+                .background(.white.opacity(0.6), in: Circle())
         }
     }
 
