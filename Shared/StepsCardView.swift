@@ -26,6 +26,8 @@ struct StepsCardView: View {
                         .foregroundStyle(Theme.ink)
                         .lineLimit(2)
                         .multilineTextAlignment(.center)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .minimumScaleFactor(0.8)
                         .padding(.horizontal, 7)
                         .padding(.vertical, 5)
                         .background(Theme.card, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
