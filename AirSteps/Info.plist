@@ -40,6 +40,8 @@
 	<true/>
 	<key>NSHealthShareUsageDescription</key>
 	<string>AirSteps reads the steps your Fitbit Air saves into Apple Health so the widget can show them.</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>AirSteps never writes to Apple Health. This text is required by Apple because the app uses HealthKit.</string>
 	<key>UILaunchScreen</key>
 	<dict>
 		<key>UIColorName</key>
