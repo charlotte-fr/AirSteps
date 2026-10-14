@@ -38,7 +38,7 @@ struct AirStepsWidgetEntryView: View {
     var body: some View {
         StepsCardView(snapshot: entry.snapshot)
             .padding(14)
-            .widgetURL(URL(string: "airsteps://sync"))
+            .widgetURL(URL(string: "airsteps://open"))
             .containerBackground(for: .widget) { Theme.background }
     }
 }

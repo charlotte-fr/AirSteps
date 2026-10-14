@@ -16,9 +16,10 @@ Fitbit Air  ──Bluetooth──▶  Google Health app  ──▶  Apple Health
 
 Accuracy: the number is exactly the Fitbit Air's own count. Freshness: the
 Fitbit Air syncs to Google Health in the background every 15–30 minutes, so the
-widget is usually that far behind. Tapping the widget opens Google Health, which
+widget is usually that far behind. The app's **Sync now** button opens Google Health, which
 forces an immediate sync; measured on an iPhone 14 with iOS 27, the new count
 appeared in Apple Health and in the widget within a minute of that sync.
+Tapping the widget opens AirSteps.
 
 ## Setup
 

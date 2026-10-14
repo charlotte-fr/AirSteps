@@ -38,7 +38,8 @@ struct StepsCardView: View {
 
     private var subtitle: String {
         switch snapshot.status {
-        case .ok:              return "goal \(snapshot.goal.short)"
+        case .ok:
+            return snapshot.reachedGoal ? snapshot.message : "\(snapshot.message) · goal \(snapshot.goal.short)"
         case .noSource:        return "open app to set up"
         case .needsPermission: return "tap to allow Health"
         }

@@ -26,13 +26,13 @@ THE BIRD
 
 FEATURES
 • 2×2 Home Screen widget with your steps and a soft progress bar
-• Daily goal: 5k, 6k, 8k, 10k or 12k
-• Tap the widget to open Google Health and sync your Fitbit right away
+• Daily goal: anything from 100 to 50,000 steps
+• One tap in the app opens Google Health to sync your Fitbit right away
 • Pick exactly which Apple Health source counts
 • No account, no servers, no ads, no tracking. Everything stays on your phone.
 
 GOOD TO KNOW
-Fitbit trackers sync in the background every 15 to 20 minutes, so the widget shows the latest synced count rather than a live ticker. Tapping the widget forces an immediate sync.
+Fitbit trackers sync in the background every 15 to 20 minutes, so the widget shows the latest synced count rather than a live ticker. The Sync now button in the app forces an immediate sync.
 
 SETUP
 1. In Google Health: Profile → Partner apps → Apple Health → turn on Steps.

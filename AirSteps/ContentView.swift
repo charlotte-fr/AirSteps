@@ -182,7 +182,7 @@ struct ContentView: View {
                 step(1, "In Google Health: Profile → Partner apps → Apple Health. Turn on Steps.")
                 step(2, "Tap Allow Apple Health above and allow Steps.")
                 step(3, "Long-press your Home Screen → + → AirSteps → add the small widget.")
-                step(4, "Tap the widget any time to force a Fitbit sync.")
+                step(4, "Tap the widget to open AirSteps. Use Sync now to force a Fitbit sync.")
             }
         }
     }

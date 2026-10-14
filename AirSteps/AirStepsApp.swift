@@ -10,12 +10,10 @@ struct AirStepsApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(model)
-                .onOpenURL { url in
-                    // airsteps://sync  (the widget's tap target). Only bounce to
-                    // Google Health once setup is done; otherwise stay here.
-                    if url.host == "sync", model.snapshot.status == .ok {
-                        model.openGoogleHealth()
-                    }
+                .onOpenURL { _ in
+                    // airsteps://open (the widget's tap target): just land in
+                    // the app and refresh. Syncing Google Health is a button here.
+                    Task { await model.refresh() }
                 }
         }
         .onChange(of: scenePhase) { _, phase in
