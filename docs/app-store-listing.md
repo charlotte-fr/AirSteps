@@ -74,7 +74,8 @@ To test: the widget reads steps written to Apple Health by the Google Health app
 
 The app contains a companion screen for permissions, goal selection and source selection, plus the widget itself.
 
-## Screenshots to take (6.7" iPhone, required)
+## Screenshots
+Since October 2026 App Store Connect's required iPhone slot is "iPhone with Dynamic Island (medium display)", which only accepts 1179×2556 or 1206×2622 px. The 6.9" (1320×2868) files in `docs/screenshots/` are rejected there; the resized 1206×2622 copies in `docs/screenshots/medium-display/` are what is uploaded. Larger displays reuse them automatically.
 1. Home Screen with the widget among other apps, bird happy mid-day.
 2. Widget close-up at goal with sparkles.
 3. The app's main screen with the preview card and goal chips.
@@ -82,11 +83,13 @@ The app contains a companion screen for permissions, goal selection and source s
 Caption ideas: "Your Fitbit Air steps, with a friend" · "Sparkles when you hit your goal" · "Nothing leaves your phone"
 
 ## Pre-submission checklist
-- [ ] Apple Developer Program membership active
-- [ ] Bundle id `nl.studiocobalt.AirSteps` registered (Xcode does this with automatic signing)
-- [ ] App Group `group.nl.studiocobalt.airsteps` registered to your team
-- [ ] Privacy policy URL live
+- [x] Apple Developer Program membership active
+- [x] Bundle id `nl.studiocobalt.AirSteps` registered (Xcode does this with automatic signing)
+- [x] App Group `group.nl.studiocobalt.airsteps` registered to your team
+- [x] Privacy policy URL live
 - [x] Contact email set in `docs/privacy.html` and `docs/index.html`
-- [ ] Check "AirSteps" is still an available app name in App Store Connect
-- [ ] Archive in Xcode → Distribute → App Store Connect → upload
-- [ ] TestFlight on your own phone for a few days first
+- [x] Check "AirSteps" is still an available app name in App Store Connect
+- [x] Archive in Xcode → Distribute → App Store Connect → upload
+- [x] Build 3 installed and verified on the iPhone 14 (widget matches Google Health)
+- [x] Regulated medical device declaration: No (App Information)
+- [x] Screenshots uploaded to the medium-display slot
